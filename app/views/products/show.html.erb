@@ -1,6 +1,6 @@
-<h1><%= @product.name %></h1>
-<h3><%= @product.cost %></h3>
-<h3><%= @product.country_of_origin %></h3>
+<h1>Blend: <%= @product.name %></h1>
+<h3>Price Per Pound: $<%= @product.cost %></h3>
+<h3>Origin: <%= @product.country_of_origin %></h3>
 
 <% if @product.reviews.any? %>
   <h4>Here are the reviews for this product:</h4>
@@ -12,13 +12,13 @@
     </ul>
   <% end %>
 <% else %>
-  <p>No reviews are listed for this product.</p>
+  <p><%= link_to "Be the first person to tell us what you think of this coffee!", new_product_review_path(@product) %></p>
 <% end %>
 
-<p><%= link_to "Be the first to review this product", new_product_review_path(@product) %></p>
+<p><%= link_to "Tell us what you think of this coffee!", new_product_review_path(@product) %></p>
 
-<p><%= link_to "Edit", edit_product_path(@product) %></p>
-<p><%= link_to "Delete product", product_path(@product),
+<p><%= link_to "Edit this coffee's info", edit_product_path(@product) %></p>
+<p><%= link_to "Delete this coffee", product_path(@product),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
 
