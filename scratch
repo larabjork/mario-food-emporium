@@ -1,0 +1,32 @@
+paste back into product.show.html.erb
+
+<% if @product.reviews.any? %>
+  <h4>Here are the reviews for this product:</h4>
+
+  <% @product.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.name, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No reviews are listed for this product.</p>
+<% end %>
+
+
+
+
+<% if @product.reviews.any? %>
+  <h4>Here are the reviews for this product:</h4>
+
+  <% @product.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.author, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>Be the first to review this product.</p>
+<% end %>
