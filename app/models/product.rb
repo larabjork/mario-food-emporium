@@ -6,10 +6,11 @@ class Product < ApplicationRecord
 
   before_save(:titleize_product)
 
+  scope :localness, ->  { where("country_of_origin  like ?", "%Rwanda%")}
+
   private
     def titleize_product
       self.name = self.name.titleize
     end
 
-  # scope :country_of_origin, -> {where(country_of_origin -> "USA" )}
 end
