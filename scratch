@@ -1,48 +1,9 @@
-paste back into product.show.html.erb
-
-<% if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
-
-  <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        <%= link_to review.name, product_review_path(@product, review) %>
-      </li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>No reviews are listed for this product.</p>
-<% end %>
-
-
-
-
-<% if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
-
-  <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
-      </li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>Be the first to review this product.</p>
-<% end %>
-
-
-
-SCOPES TO GET ROUTED CORRECTLY
-<p><%= link_to "See Products with the Most Reviews", products_path("most_reviews") %></p>
-<p><%= link_to "See Newest Product Listings", products_path("three_most_recent") %></p>
-<h2>Rwandan Offerings</h2>
-<p><%= link_to "See Rwandan Coffee", products_path("localness") %></p>
 
 
 
 
 
+s
 <% if @product.reviews.any? %>
   <h4>Here are the reviews for this product:</h4>
   <% @product.reviews.each do |review| %>
@@ -55,3 +16,13 @@ SCOPES TO GET ROUTED CORRECTLY
 <% else %>
   <p><%= link_to "Be the first person to tell us what you think of this coffee!", new_product_review_path(@product) %></p>
 <% end %>
+
+
+if params[:format]
+  @products = Product.localness
+  render :local
+  # elsif params[:format => "localness"]
+  #   @products = Product.three_most_recent
+  #   render :recents
+  #   @products = Product.most_reviews
+else
