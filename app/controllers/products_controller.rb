@@ -14,12 +14,12 @@ class ProductsController < ApplicationController
    def three_most_recent
      params[:format]
      @products = Product.three_most_recent
-     render :most_rev
+     render :recents
    end
    def most_reviews
      params[:format]
      @products = Product.most_reviews
-     render :recents
+     render :most_rev
    end
 
 
