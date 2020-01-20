@@ -8,7 +8,7 @@
 
 Product.destroy_all
  50.times do |index|
-  Product.create!(name: Faker::Coffee.blend_name, cost: Faker::Number.number(digits: 2), country_of_origin: Faker:: Coffee.origin)
+  Product.create!(name: Faker::Coffee.blend_name, cost: Faker::Number.between(from: 12, to: 27), country_of_origin: Faker:: Coffee.origin)
 end
 
 p "Created #{Product.count} products"

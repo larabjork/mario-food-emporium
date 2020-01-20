@@ -25,7 +25,6 @@ class ReviewsController < ApplicationController
   def edit
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
-    flash[:notice] = "Review edited!"
     render :edit
   end
 
