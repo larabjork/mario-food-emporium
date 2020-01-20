@@ -1,13 +1,13 @@
 <%= render "layouts/errors", :object => @review %>
 
 <%= form_for [@product, @review] do |f| %>
-  <%= f.label "Author" %>
+  <%= f.label "You Can Call Me" %>
   <%= f.text_field :author %>
   <br>
-  <%= f.label "Your Review" %>
+  <%= f.label "Here's What I Think:" %>
   <%= f.text_area :content_body %>
 <br>
-  <%= f.label :rating %>
+  <%= f.label "On a Scale of 1 to 5, Here's My Rating" %>
   <%= f.text_field :rating %>
   <p><%= f.submit %></p>
 <% end %>

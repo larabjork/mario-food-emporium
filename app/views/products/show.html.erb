@@ -1,9 +1,13 @@
-<h1>Blend: <%= @product.name %></h1>
-<h3>Price Per Pound: $<%= @product.cost %></h3>
-<h3>Origin: <%= @product.country_of_origin %></h3>
+<div class="container">
+
+<div class="coffee-feature">
+  <h1>Blend: <%= @product.name %></h1>
+  <h3>Price Per Pound: $<%= @product.cost %></h3>
+  <h3>Origin: <%= @product.country_of_origin %></h3>
+</div>
 
 <% if @product.reviews.any? %>
-  <h4>Coffee Talk</h4>
+  <h2>Coffee Talk</h2>
   <table>
     <tr>
       <th class="author">Who Said It</th>
@@ -32,3 +36,6 @@
                                        :method => "delete"} %></p>
 
 <p><%= link_to "Return to coffee list", products_path %></p>
+
+
+</div>

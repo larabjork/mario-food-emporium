@@ -37,8 +37,15 @@ table {
   width: 100%;
 }
 
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #073B4C;
+}
+
 th {
   font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
 }
 
 th.author, th.edit-option {
@@ -46,6 +53,13 @@ th.author, th.edit-option {
 }
 th.rating {
   width: 8%
+}
+
+.coffee-feature {
+  background: #d1f1fa;
+  padding: 15px;
+  width: 50%;
+  border-radius: 6px;
 }
 
 
