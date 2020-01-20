@@ -3,14 +3,23 @@
 <h3>Origin: <%= @product.country_of_origin %></h3>
 
 <% if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
+  <h4>Coffee Talk</h4>
+  <table>
+    <tr>
+      <th class="author">Who Said It</th>
+      <th class="content-body">Words of Wisdom</th>
+      <th class="rating">Rating</th>
+      <th class="edit-option">Edit My Review </th>
+    </tr>
   <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
-      </li>
-    </ul>
+    <tr>
+      <td><%= review.author %></td>
+      <td><%= review.content_body %></td>
+      <td><%= review.rating %></td>
+      <td><%= link_to "Edit Review", edit_product_review_path(@product)%></td>
+    </tr>
   <% end %>
+</table>
 <% else %>
   <p><%= link_to "Be the first person to tell us what you think of this coffee!", new_product_review_path(@product) %></p>
 <% end %>

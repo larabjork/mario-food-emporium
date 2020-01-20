@@ -32,18 +32,26 @@ paste back into product.show.html.erb
 <% end %>
 
 
-Product.destroy_all
 
- 50.times.map do |index|
-  Product.create!(name: Faker::Coffee.blend_name, cost: Faker::Number.number(digits: 2), country_of_origin: Faker:: Coffee.origin)
-end
+SCOPES TO GET ROUTED CORRECTLY
+<p><%= link_to "See Products with the Most Reviews", products_path("most_reviews") %></p>
+<p><%= link_to "See Newest Product Listings", products_path("three_most_recent") %></p>
+<h2>Rwandan Offerings</h2>
+<p><%= link_to "See Rwandan Coffee", products_path("localness") %></p>
 
-p "Created #{Product.count} products"
 
-Review.destroy_all
 
-250.times do |index|
-  Review.create!(author: Faker::Movies::HitchhikersGuideToTheGalaxy.character, content_body: Faker::Movies::HitchhikersGuideToTheGalaxy.marvin_quote, rating: Faker::Number.between(from: 1, to: 5), product_id: products.sample)
-end
 
-p "Created #{Review.count} reviews"
+
+<% if @product.reviews.any? %>
+  <h4>Here are the reviews for this product:</h4>
+  <% @product.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.author, product_review_path(@product, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p><%= link_to "Be the first person to tell us what you think of this coffee!", new_product_review_path(@product) %></p>
+<% end %>

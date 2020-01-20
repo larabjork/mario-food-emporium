@@ -5,6 +5,12 @@
 
 <p><%= link_to "Create new product", new_product_path %></p>
 
+
+<p><%= link_to "See Newest Product Listings", products_path("three_most_recent") %></p>
+
+
+
+
 <h2>Current Offerings</h2>
 
 
@@ -18,7 +24,3 @@
 <% else %>
   <p>There are no products yet.</p>
 <% end %>
-
-
-<h2>Rwandan Offerings</h2>
-<p><%= link_to "See Rwandan Coffee", products_path("localness") %></p>

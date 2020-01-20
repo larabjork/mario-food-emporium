@@ -33,5 +33,20 @@ body {
   background-color: #FFD166;
 }
 
+table {
+  width: 100%;
+}
+
+th {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+th.author, th.edit-option {
+  width: 15%
+}
+th.rating {
+  width: 8%
+}
+
 
 // other colors to try #EF476F infra red and 06D6A0 caribbean green

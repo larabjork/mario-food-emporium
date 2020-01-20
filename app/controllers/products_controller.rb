@@ -2,14 +2,16 @@ class ProductsController < ApplicationController
 
   def index
     if params[:format]
-      @products = Product.localness
+      # @products = Product.localness
+      @products = Product.three_most_recent
+      # @products = Product.most_reviews
     else
       @products = Product.all
+      render :index
     end
-    render :index
   end
 
-  
+
 
   def new
     @product = Product.new
