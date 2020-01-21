@@ -52,7 +52,8 @@ Project was written using Google Chrome. No other browsers were tested.
 2. Clone the project locally from github (https://github.com/larabjork/mario-food-emporium.git).
 3. Install Bundler if you do not already have it by running **gem install bundler** in the terminal.
 4. Run **bundle install** to manage gems; if you make additional changes to the Gemfile, you will need to run this command again.
-ADD MORE ABOUT INSTALLATION
+5. Enter **rails s** or **rails server** at the terminal prompt.
+6. Open a browser window and type **localhost:3000** in the address bar.
 
 If something doesn't display correctly or goes wrong somehow, please contact me at <lara.m.bjork@gmail.com> and I will do my best to troubleshoot for you.
 
