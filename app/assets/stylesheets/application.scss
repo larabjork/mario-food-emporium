@@ -25,7 +25,11 @@
  color: #073B4C;
 }
 
-p, li, a {
+p, li {
+  font-family: 'Roboto', sans-serif;
+  color: #073B4C;
+}
+a {
   font-family: 'Roboto', sans-serif;
   color: #073B4C;
 }
@@ -49,7 +53,7 @@ th {
   font-size: 20px;
 }
 
-th.author, th.edit-option {
+th.author {
   width: 15%
 }
 th.rating {
@@ -63,5 +67,10 @@ th.rating {
   border-radius: 6px;
 }
 
+p {
+  font-style: italic;
+}
 
 // other colors to try #EF476F infra red and 06D6A0 caribbean green FFD166 for orange-yellow
+
+// 118AB2
