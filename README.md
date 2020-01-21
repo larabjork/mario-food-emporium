@@ -26,6 +26,7 @@ _* Scopes: Your site should use scopes to display the following information on t
   _* The product with the most reviews._
   _* The three most recently added products._
   _* All products made in the USA for buyers that want to buy local products._
+  NOTE: The assignment asked us to allow people to view locally made products, but none of the data from Faker that I seeded had coffees from the USA (understandably). I used Rwanda instead for this scope.
 
 _* Validations: Your site should include validations for the following:_
   _* All fields should be filled out, including rating._
