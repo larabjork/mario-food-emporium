@@ -241,7 +241,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 4.1)
-  rails (~> 6.0.2, >= 6.0.2.1)
+  rails
   rspec-rails
   sass-rails (>= 6)
   sassc-rails (>= 2.1.0)
