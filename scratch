@@ -1,28 +1,24 @@
+require('capybara/rspec')
+require('./app')
+Capybara.app = Sinatra::Application
+set(:show_exceptions, false)
 
+describe('create a word path', {:type => :feature}) do
+  it('creates a word and then goes to the word page') do
+    visit('/words')
+    click_on('Yes, I want to start writing!')
+    fill_in('word_term', :with => 'Panda')
+    click_on('Go!')
+    expect(page).to have_content('Panda')
+  end
+end
 
-
-
-
-s
-<% if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
-  <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
-      </li>
-    </ul>
-  <% end %>
-<% else %>
-  <p><%= link_to "Be the first person to tell us what you think of this coffee!", new_product_review_path(@product) %></p>
-<% end %>
-
-
-if params[:format]
-  @products = Product.localness
-  render :local
-  # elsif params[:format => "localness"]
-  #   @products = Product.three_most_recent
-  #   render :recents
-  #   @products = Product.most_reviews
-else
+describe('create a definition path', {:type => :feature}) do
+  it('creates a word and then goes to the word page') do
+    word = Word.new('Panda', nil).save
+    visit("/words/#{word.id}")
+    fill_in('definition_term', :with => 'Really cute black and white animal')
+    click_on('Add my description')
+    expect(page).to have_content('Really cute black and white animal')
+  end
+end
