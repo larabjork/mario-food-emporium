@@ -49,11 +49,14 @@ Project was written using Google Chrome. No other browsers were tested.
 
 ### Project Setup instructions
 1. Ensure that you have the correct versions of Ruby, Rails, and PSQL installed.
-2. Clone the project locally from github (https://github.com/larabjork/mario-food-emporium.git).
+2. Clone the project locally from github (https://github.com/larabjork/mario-coffee.git).
 3. Install Bundler if you do not already have it by running **gem install bundler** in the terminal.
 4. Run **bundle install** to manage gems; if you make additional changes to the Gemfile, you will need to run this command again.
-5. Enter **rails s** or **rails server** at the terminal prompt.
-6. Open a browser window and type **localhost:3000** in the address bar.
+5. Run **rake db:create**, which should create two databases: mario_coffee_development and mario_coffee_test.
+6. Run **rake db:migrate**, followed by **rake db:test:prepare**.
+7. To seed the databases with placeholder information, run **rake db:seed**, which should give you 50 products and 250 reviews.
+8. Enter **rails s** or **rails server** at the terminal prompt.
+9. Open a browser window and type **localhost:3000** in the address bar.
 
 If something doesn't display correctly or goes wrong somehow, please contact me at <lara.m.bjork@gmail.com> and I will do my best to troubleshoot for you.
 
